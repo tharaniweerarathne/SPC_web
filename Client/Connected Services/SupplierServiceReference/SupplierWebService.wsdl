@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AutoSupplierId">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutoSupplierIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutoSupplierIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertSupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SupplierID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertSupplierResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AutoSupplierIdSoapIn">
+    <wsdl:part name="parameters" element="tns:AutoSupplierId" />
+  </wsdl:message>
+  <wsdl:message name="AutoSupplierIdSoapOut">
+    <wsdl:part name="parameters" element="tns:AutoSupplierIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:insertSupplier" />
+  </wsdl:message>
+  <wsdl:message name="insertSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:insertSupplierResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SupplierWebServiceSoap">
+    <wsdl:operation name="AutoSupplierId">
+      <wsdl:input message="tns:AutoSupplierIdSoapIn" />
+      <wsdl:output message="tns:AutoSupplierIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertSupplier">
+      <wsdl:input message="tns:insertSupplierSoapIn" />
+      <wsdl:output message="tns:insertSupplierSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SupplierWebServiceSoap" type="tns:SupplierWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutoSupplierId">
+      <soap:operation soapAction="http://tempuri.org/AutoSupplierId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSupplier">
+      <soap:operation soapAction="http://tempuri.org/insertSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SupplierWebServiceSoap12" type="tns:SupplierWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutoSupplierId">
+      <soap12:operation soapAction="http://tempuri.org/AutoSupplierId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertSupplier">
+      <soap12:operation soapAction="http://tempuri.org/insertSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SupplierWebService">
+    <wsdl:port name="SupplierWebServiceSoap" binding="tns:SupplierWebServiceSoap">
+      <soap:address location="https://localhost:44373/SupplierWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SupplierWebServiceSoap12" binding="tns:SupplierWebServiceSoap12">
+      <soap12:address location="https://localhost:44373/SupplierWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
