@@ -32,7 +32,7 @@
 
 - **🌐 Backend**: `.NET 6 + WCF (SOAP)`  
 - **🗃 Database**: `MySQL 
-- **📱 Clients**: `ASP.NET MVC (Web)` 
+- **📱 Clients**: `ASP.NET Web Application (.NET Framework) 
 - **📡 API**: `XML/SOAP` for cross-platform compatibility  
 
 ---
