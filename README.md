@@ -12,7 +12,7 @@
 | Feature                | Description                                                                 | Screenshot                          |
 |------------------------|-----------------------------------------------------------------------------|-------------------------------------|
 | **🔧 Supplier Registration** | Register suppliers via web or SPC branches.                                 | ![Supplier](Screenshots_application/supplier.png) |
-| **📦 Stock Management**     | Real-time inventory updates from plants/warehouses.                         | ![Stock](Screenshots_application/supplier.png)      |
+| **📦 Stock Management**     | Real-time inventory updates from plants/warehouses.                         | ![Stock](Screenshots_application/addDrug.png)      |
 | **🔍 Drug Search & Order**  | Pharmacies search/order drugs via unified APIs.                             | ![Order](Screenshots_application/supplier.png)      |
 
 ---
